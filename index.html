@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura TV — IPTV Player for Your Own Playlists</title>
+    <meta
+        name="description"
+        content="Aura TV is an IPTV player for the playlists, credentials, and guide data you add yourself. Import M3U or Xtream sources, sync with iCloud, and start with a 7-day free trial."
+    >
+    <meta name="apple-itunes-app" content="app-id=6762010608, app-argument=https://apps.apple.com/app/id6762010608">
+    <meta property="og:title" content="Aura TV — IPTV Player for Your Own Playlists">
+    <meta
+        property="og:description"
+        content="Import your own M3U playlists, Xtream-compatible credentials, and guide data. Aura TV does not include channels or content subscriptions."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://eliran-mesika.github.io/auratv-site/">
+    <link rel="canonical" href="https://eliran-mesika.github.io/auratv-site/">
+    <style>
+        :root {
+            --bg: #f6f4ef;
+            --surface: rgba(255, 252, 247, 0.88);
+            --surface-strong: #fffdfa;
+            --ink: #17202b;
+            --muted: #5f6b7a;
+            --muted-soft: #7c8898;
+            --line: rgba(23, 32, 43, 0.10);
+            --accent: #1464d2;
+            --accent-deep: #0f4aa1;
+            --accent-soft: #dbe9ff;
+            --gold: #c8802f;
+            --gold-soft: #fff0dd;
+            --success: #1a7f5a;
+            --shadow-xl: 0 34px 90px rgba(23, 32, 43, 0.14);
+            --shadow-md: 0 18px 44px rgba(23, 32, 43, 0.10);
+            --radius-xl: 34px;
+            --radius-lg: 24px;
+            --radius-md: 18px;
+            --content: 1180px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Avenir Next", "Segoe UI", sans-serif;
+            color: var(--ink);
+            background:
+                radial-gradient(circle at top left, rgba(20, 100, 210, 0.10), transparent 35%),
+                radial-gradient(circle at top right, rgba(200, 128, 47, 0.12), transparent 28%),
+                linear-gradient(180deg, #fffdfa 0%, var(--bg) 46%, #ffffff 100%);
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .shell {
+            width: min(100% - 32px, var(--content));
+            margin: 0 auto;
+        }
+
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            backdrop-filter: blur(18px);
+            background: rgba(246, 244, 239, 0.78);
+            border-bottom: 1px solid rgba(23, 32, 43, 0.06);
+        }
+
+        .topbar-inner {
+            width: min(100% - 32px, var(--content));
+            margin: 0 auto;
+            padding: 16px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .brand-mark {
+            width: 46px;
+            height: 46px;
+            border-radius: 14px;
+            background: linear-gradient(145deg, var(--accent), #3d88ea 62%, #7cb1ff);
+            box-shadow: 0 14px 26px rgba(20, 100, 210, 0.26);
+            position: relative;
+        }
+
+        .brand-mark::after {
+            content: "";
+            position: absolute;
+            inset: 9px;
+            border-radius: 10px;
+            border: 2px solid rgba(255, 255, 255, 0.74);
+        }
+
+        .brand-copy {
+            min-width: 0;
+        }
+
+        .brand-name {
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .brand-subtitle {
+            color: var(--muted);
+            font-size: 0.88rem;
+            margin-top: 2px;
+        }
+
+        .top-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            border-radius: 999px;
+            padding: 14px 22px;
+            font-size: 0.98rem;
+            font-weight: 600;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .button:hover {
+            transform: translateY(-1px);
+        }
+
+        .button-primary {
+            color: #ffffff;
+            background: linear-gradient(135deg, var(--accent), #2e7be4);
+            box-shadow: 0 16px 30px rgba(20, 100, 210, 0.22);
+        }
+
+        .button-secondary {
+            background: rgba(255, 255, 255, 0.78);
+            border: 1px solid rgba(23, 32, 43, 0.10);
+        }
+
+        .hero {
+            padding: 52px 0 28px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+            gap: 36px;
+            align-items: start;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            gap: 10px;
+            align-items: center;
+            padding: 10px 15px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.82);
+            border: 1px solid rgba(23, 32, 43, 0.10);
+            color: var(--muted);
+            font-size: 0.86rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .eyebrow-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), var(--gold));
+        }
+
+        h1 {
+            margin-top: 22px;
+            font-family: "Iowan Old Style", "Palatino Linotype", serif;
+            font-size: clamp(2.8rem, 6vw, 5.2rem);
+            line-height: 0.94;
+            letter-spacing: -0.05em;
+            max-width: 11ch;
+        }
+
+        .hero-lead {
+            margin-top: 18px;
+            max-width: 60ch;
+            color: var(--muted);
+            font-size: 1.12rem;
+            line-height: 1.75;
+        }
+
+        .hero-note {
+            margin-top: 16px;
+            color: var(--muted-soft);
+            font-size: 0.95rem;
+            line-height: 1.65;
+        }
+
+        .hero-actions {
+            margin-top: 28px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .badges {
+            margin-top: 24px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 14px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.82);
+            border: 1px solid rgba(23, 32, 43, 0.08);
+            font-size: 0.92rem;
+            font-weight: 600;
+        }
+
+        .pricing-card,
+        .card,
+        .faq-card,
+        .policy-card {
+            background: var(--surface);
+            border: 1px solid rgba(23, 32, 43, 0.10);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .pricing-card {
+            padding: 28px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card::before {
+            content: "";
+            position: absolute;
+            inset: auto auto -80px -80px;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(20, 100, 210, 0.18), transparent 70%);
+        }
+
+        .pricing-label {
+            color: var(--gold);
+            font-size: 0.86rem;
+            font-weight: 800;
+            letter-spacing: 0.09em;
+            text-transform: uppercase;
+        }
+
+        .pricing-price {
+            margin-top: 18px;
+            font-family: "Iowan Old Style", "Palatino Linotype", serif;
+            font-size: 3.2rem;
+            line-height: 0.95;
+            letter-spacing: -0.05em;
+        }
+
+        .pricing-copy {
+            margin-top: 14px;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        .pricing-list {
+            margin-top: 18px;
+            display: grid;
+            gap: 12px;
+        }
+
+        .pricing-list div {
+            padding: 14px 16px;
+            background: rgba(255, 255, 255, 0.78);
+            border: 1px solid rgba(23, 32, 43, 0.07);
+            border-radius: 18px;
+            color: var(--ink);
+            font-size: 0.95rem;
+            line-height: 1.55;
+        }
+
+        .section {
+            padding: 26px 0;
+        }
+
+        .section-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 20px;
+            margin-bottom: 18px;
+        }
+
+        .section-heading h2 {
+            font-family: "Iowan Old Style", "Palatino Linotype", serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            letter-spacing: -0.04em;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+            max-width: 52ch;
+            line-height: 1.7;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .card {
+            padding: 22px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .card h3 {
+            margin-top: 12px;
+            margin-bottom: 10px;
+            font-size: 1.08rem;
+            letter-spacing: -0.02em;
+        }
+
+        .card p,
+        .faq-card p,
+        .policy-card p,
+        .summary-panel p,
+        .summary-panel li {
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        .card-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 14px;
+            background: var(--accent-soft);
+            color: var(--accent);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+        }
+
+        .shot-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .shot {
+            background: rgba(255, 255, 255, 0.74);
+            border: 1px solid rgba(23, 32, 43, 0.08);
+            border-radius: 30px;
+            padding: 14px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .shot img {
+            border-radius: 22px;
+            width: 100%;
+            box-shadow: 0 18px 40px rgba(23, 32, 43, 0.14);
+        }
+
+        .shot-title {
+            margin-top: 14px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .shot-copy {
+            margin-top: 6px;
+            color: var(--muted);
+            font-size: 0.94rem;
+            line-height: 1.65;
+        }
+
+        .faq-grid,
+        .policy-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .faq-card,
+        .policy-card {
+            padding: 22px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .faq-card h3,
+        .policy-card h3 {
+            margin-bottom: 10px;
+            letter-spacing: -0.02em;
+        }
+
+        .summary-panel {
+            margin-top: 20px;
+            padding: 24px;
+            border-radius: var(--radius-xl);
+            background: linear-gradient(140deg, rgba(20, 100, 210, 0.08), rgba(200, 128, 47, 0.10));
+            border: 1px solid rgba(20, 100, 210, 0.10);
+        }
+
+        .summary-panel h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .summary-panel ul {
+            margin-top: 12px;
+            padding-left: 18px;
+        }
+
+        footer {
+            padding: 30px 0 54px;
+        }
+
+        .footer-card {
+            padding: 22px 24px;
+            border-radius: var(--radius-xl);
+            background: var(--surface);
+            border: 1px solid rgba(23, 32, 43, 0.10);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 18px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            color: var(--muted);
+        }
+
+        @media (max-width: 1040px) {
+            .cards {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .shot-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 860px) {
+            .hero-grid,
+            .faq-grid,
+            .policy-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-heading {
+                display: block;
+            }
+
+            .section-heading p {
+                margin-top: 12px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .cards,
+            .shot-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .topbar-inner,
+            .shell {
+                width: min(100% - 22px, var(--content));
+            }
+
+            h1 {
+                max-width: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <div class="brand">
+                <div class="brand-mark" aria-hidden="true"></div>
+                <div class="brand-copy">
+                    <div class="brand-name">Aura TV</div>
+                    <div class="brand-subtitle">IPTV player for playlists you add yourself</div>
+                </div>
+            </div>
+            <div class="top-actions">
+                <a class="button button-secondary" href="./support/">Support</a>
+                <a class="button button-primary" href="https://apps.apple.com/app/id6762010608">View on the App Store</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="shell">
+        <section class="hero">
+            <div class="hero-grid">
+                <div>
+                    <div class="eyebrow">
+                        <span class="eyebrow-dot"></span>
+                        User-provided playlists only
+                    </div>
+                    <h1>Import your playlist. Keep everything in sync.</h1>
+                    <p class="hero-lead">
+                        Aura TV is an IPTV player for the playlists, credentials, and guide data you already use.
+                        Import M3U or Xtream-compatible sources, browse live channels, movies, and series, and keep your library organized across your Apple devices.
+                    </p>
+                    <p class="hero-note">
+                        Aura TV does not include channels, media catalogs, broadcaster accounts, or content subscriptions.
+                        Users are responsible for the sources, guide feeds, artwork, and media they choose to add.
+                    </p>
+                    <div class="hero-actions">
+                        <a class="button button-primary" href="https://apps.apple.com/app/id6762010608">Download on the App Store</a>
+                        <a class="button button-secondary" href="./privacy/">Privacy Policy</a>
+                    </div>
+                    <div class="badges">
+                        <div class="badge">M3U playlists</div>
+                        <div class="badge">Xtream-compatible login</div>
+                        <div class="badge">EPG / XMLTV</div>
+                        <div class="badge">Optional iCloud sync</div>
+                    </div>
+                </div>
+
+                <aside class="pricing-card">
+                    <div class="pricing-label">Premium access</div>
+                    <div class="pricing-price">7 days free</div>
+                    <p class="pricing-copy">
+                        Start with a 7-day free trial, then continue with an annual auto-renewable subscription billed by Apple.
+                        Cancel anytime in your App Store subscription settings before renewal.
+                    </p>
+                    <div class="pricing-list">
+                        <div><strong>Player-only product.</strong> Aura TV never sells channels or bundled content.</div>
+                        <div><strong>Review-safe demo.</strong> First launch includes a neutral sample library for App Review and user onboarding.</div>
+                        <div><strong>Support contact.</strong> <a href="mailto:mesikaeliran@gmail.com">mesikaeliran@gmail.com</a></div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-heading">
+                <div>
+                    <h2>What Aura TV helps you do</h2>
+                </div>
+                <p>
+                    The app focuses on organization, playback, and cross-device continuity for sources you already control.
+                    It is designed as a player, not as a broadcaster or catalog service.
+                </p>
+            </div>
+            <div class="cards">
+                <article class="card">
+                    <div class="card-icon">01</div>
+                    <h3>Import your own source</h3>
+                    <p>Add an M3U playlist URL, an M3U file, or Xtream-compatible credentials from a source you are authorized to use.</p>
+                </article>
+                <article class="card">
+                    <div class="card-icon">02</div>
+                    <h3>Read guide data when available</h3>
+                    <p>When your playlist includes EPG or XMLTV data, Aura TV surfaces now playing, upcoming schedule context, and library browsing tools.</p>
+                </article>
+                <article class="card">
+                    <div class="card-icon">03</div>
+                    <h3>Keep everything consistent</h3>
+                    <p>Favorites, watch history, and preferences can sync through iCloud so your setup feels continuous across your Apple devices.</p>
+                </article>
+                <article class="card">
+                    <div class="card-icon">04</div>
+                    <h3>Transfer setup between your devices</h3>
+                    <p>Use optional QR transfer on the same local network to move setup details between devices you own, without turning Aura TV into a content service.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="screenshots">
+            <div class="section-heading">
+                <div>
+                    <h2>Inside the app</h2>
+                </div>
+                <p>
+                    These images use the built-in rights-safe review demo and the generated App Store headline set.
+                    They match the same player-only positioning used in the submission copy.
+                </p>
+            </div>
+            <div class="shot-grid">
+                <article class="shot">
+                    <img src="./assets/screenshots/iphone-6_9/01_onboarding.png" alt="Aura TV onboarding screenshot">
+                    <div class="shot-title">Bring your own playlist</div>
+                    <div class="shot-copy">First launch explains that Aura TV is a player for sources you add yourself.</div>
+                </article>
+                <article class="shot">
+                    <img src="./assets/screenshots/iphone-6_9/02_add_source.png" alt="Aura TV source import screenshot">
+                    <div class="shot-title">Import M3U or Xtream</div>
+                    <div class="shot-copy">Add an M3U URL, local file, or Xtream-compatible credentials from a source you control.</div>
+                </article>
+                <article class="shot">
+                    <img src="./assets/screenshots/iphone-6_9/03_live.png" alt="Aura TV live guide screenshot">
+                    <div class="shot-title">Watch live with guide data</div>
+                    <div class="shot-copy">See channel rows, now-playing state, and schedule context when guide data is available.</div>
+                </article>
+                <article class="shot">
+                    <img src="./assets/screenshots/iphone-6_9/04_movies.png" alt="Aura TV movies screenshot">
+                    <div class="shot-title">Keep movies organized</div>
+                    <div class="shot-copy">Separate on-demand titles into a clean, searchable library.</div>
+                </article>
+                <article class="shot">
+                    <img src="./assets/screenshots/iphone-6_9/05_series.png" alt="Aura TV series screenshot">
+                    <div class="shot-title">Track series and progress</div>
+                    <div class="shot-copy">Continue watching across the library you created from your own playlists.</div>
+                </article>
+                <article class="shot">
+                    <img src="./assets/screenshots/iphone-6_9/06_settings.png" alt="Aura TV settings screenshot">
+                    <div class="shot-title">Control sync and playback</div>
+                    <div class="shot-copy">Manage support, privacy, restore purchases, and premium settings in one place.</div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-heading">
+                <div>
+                    <h2>FAQ</h2>
+                </div>
+                <p>
+                    The same answers here are reflected in the App Store copy and review notes so the public story stays consistent.
+                </p>
+            </div>
+            <div class="faq-grid">
+                <article class="faq-card">
+                    <h3>Does Aura TV include channels or TV packages?</h3>
+                    <p>No. Aura TV is a player. It only opens playlists, credentials, and guide data that the user adds from sources they control.</p>
+                </article>
+                <article class="faq-card">
+                    <h3>Which formats are supported?</h3>
+                    <p>M3U playlist URLs, M3U files, Xtream-compatible credentials, and guide data such as XMLTV or EPG when the source provides it.</p>
+                </article>
+                <article class="faq-card">
+                    <h3>How does the subscription work?</h3>
+                    <p>Aura TV offers a 7-day free trial and then an annual auto-renewable subscription billed by Apple. You can cancel or manage it in your App Store account settings.</p>
+                </article>
+                <article class="faq-card">
+                    <h3>What data syncs through iCloud?</h3>
+                    <p>Playlist metadata, preferences, favorites, and watch history may sync through iCloud / CloudKit. Xtream-compatible passwords remain in the device keychain and are not synced via iCloud Keychain.</p>
+                </article>
+            </div>
+            <div class="summary-panel">
+                <h3>תקציר בעברית</h3>
+                <p>
+                    Aura TV היא אפליקציית נגן בלבד. היא לא מספקת ערוצים, קטלוג תוכן או מנוי טלוויזיה,
+                    אלא מאפשרת לייבא פלייליסטים, פרטי גישה ונתוני מדריך שאתם כבר משתמשים בהם.
+                </p>
+                <ul>
+                    <li>ייבוא M3U, קובץ M3U או פרטי גישה תואמי Xtream</li>
+                    <li>ניסיון חינם ל-7 ימים ואז מנוי שנתי דרך Apple</li>
+                    <li>סנכרון iCloud אופציונלי עבור ספרייה, העדפות והיסטוריית צפייה</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-heading">
+                <div>
+                    <h2>Policies and support</h2>
+                </div>
+                <p>Use the links below for support, privacy, and terms. These are the same public URLs intended for App Store Connect.</p>
+            </div>
+            <div class="policy-grid">
+                <article class="policy-card">
+                    <h3>Support</h3>
+                    <p>Questions, troubleshooting, or App Review follow-up can be sent to <a href="mailto:mesikaeliran@gmail.com">mesikaeliran@gmail.com</a>.</p>
+                    <p><a href="./support/">Open the support page</a></p>
+                </article>
+                <article class="policy-card">
+                    <h3>Privacy and terms</h3>
+                    <p>Read how Aura TV handles playlist data, iCloud sync, purchases, and user responsibility.</p>
+                    <p><a href="./privacy/">Privacy Policy</a> · <a href="./terms/">Terms of Use</a></p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="shell">
+        <div class="footer-card">
+            <div>
+                <strong>Aura TV</strong>
+                <div style="margin-top: 6px; color: var(--muted);">IPTV player for user-provided playlists and guide data</div>
+            </div>
+            <div class="footer-links">
+                <a href="./support/">Support</a>
+                <a href="./privacy/">Privacy</a>
+                <a href="./terms/">Terms</a>
+                <a href="mailto:mesikaeliran@gmail.com">mesikaeliran@gmail.com</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
