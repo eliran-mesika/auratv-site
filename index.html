@@ -100,21 +100,12 @@
             gap: 14px;
         }
 
-        .brand-mark {
-            width: 46px;
-            height: 46px;
-            border-radius: 14px;
-            background: linear-gradient(145deg, var(--accent), #3d88ea 62%, #7cb1ff);
-            box-shadow: 0 14px 26px rgba(20, 100, 210, 0.26);
-            position: relative;
-        }
-
-        .brand-mark::after {
-            content: "";
-            position: absolute;
-            inset: 9px;
-            border-radius: 10px;
-            border: 2px solid rgba(255, 255, 255, 0.74);
+        .brand-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 18px;
+            display: block;
+            box-shadow: 0 18px 34px rgba(20, 100, 210, 0.18);
         }
 
         .brand-copy {
@@ -166,12 +157,11 @@
             border: 1px solid rgba(23, 32, 43, 0.10);
         }
 
-        .button-disabled {
+        .launch-note {
+            align-self: center;
             color: var(--muted-soft);
-            background: rgba(23, 32, 43, 0.06);
-            border: 1px solid rgba(23, 32, 43, 0.08);
-            box-shadow: none;
-            cursor: default;
+            font-size: 0.9rem;
+            line-height: 1.5;
         }
 
         .hero {
@@ -391,21 +381,32 @@
         }
 
         .shot {
-            background: rgba(255, 255, 255, 0.74);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.90), rgba(248, 244, 238, 0.84));
             border: 1px solid rgba(23, 32, 43, 0.08);
-            border-radius: 30px;
-            padding: 14px;
+            border-radius: 34px;
+            padding: 18px;
             box-shadow: var(--shadow-md);
         }
 
+        .shot-media {
+            padding: 14px;
+            border-radius: 26px;
+            background:
+                radial-gradient(circle at top, rgba(20, 100, 210, 0.12), transparent 42%),
+                linear-gradient(180deg, rgba(7, 12, 26, 0.98), rgba(11, 16, 31, 0.92));
+            min-height: 100%;
+        }
+
         .shot img {
-            border-radius: 22px;
-            width: 100%;
-            box-shadow: 0 18px 40px rgba(23, 32, 43, 0.14);
+            border-radius: 28px;
+            width: min(100%, 270px);
+            margin: 0 auto;
+            box-shadow: 0 22px 44px rgba(0, 0, 0, 0.34);
         }
 
         .shot-title {
-            margin-top: 14px;
+            margin-top: 16px;
+            font-size: 1.06rem;
             font-weight: 700;
             letter-spacing: -0.02em;
         }
@@ -415,6 +416,20 @@
             color: var(--muted);
             font-size: 0.94rem;
             line-height: 1.65;
+        }
+
+        .shot-label {
+            display: inline-flex;
+            align-items: center;
+            margin-top: 14px;
+            padding: 7px 11px;
+            border-radius: 999px;
+            background: rgba(20, 100, 210, 0.08);
+            color: var(--accent);
+            font-size: 0.76rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
         }
 
         .faq-grid,
@@ -524,7 +539,7 @@
     <header class="topbar">
         <div class="topbar-inner">
             <div class="brand">
-                <div class="brand-mark" aria-hidden="true"></div>
+                <img class="brand-icon" src="./assets/app-icon.png" alt="Aura TV app icon">
                 <div class="brand-copy">
                     <div class="brand-name">Aura TV</div>
                     <div class="brand-subtitle">IPTV player for playlists you add yourself</div>
@@ -532,7 +547,7 @@
             </div>
             <div class="top-actions">
                 <a class="button button-secondary" href="./support/">Support</a>
-                <span class="button button-disabled" aria-disabled="true">App Store page after review</span>
+                <span class="launch-note">App Store page goes live after Apple review.</span>
             </div>
         </div>
     </header>
@@ -555,7 +570,7 @@
                         Users are responsible for the sources, guide feeds, artwork, and media they choose to add.
                     </p>
                     <div class="hero-actions">
-                        <a class="button button-primary" href="./support/">Contact support</a>
+                        <a class="button button-primary" href="./support/">Open support</a>
                         <a class="button button-secondary" href="./privacy/">Privacy Policy</a>
                     </div>
                     <p class="hero-note" style="margin-top: 14px;">
@@ -625,40 +640,34 @@
                     <h2>Inside the app</h2>
                 </div>
                 <p>
-                    These images use the built-in rights-safe review demo and the generated App Store headline set.
-                    They match the same player-only positioning used in the submission copy.
+                    These previews use the actual in-app UI from the rights-safe review demo.
+                    They show the product more naturally than the App Store marketing exports.
                 </p>
             </div>
             <div class="shot-grid">
                 <article class="shot">
-                    <img src="./assets/screenshots/iphone-6_9/01_onboarding.png" alt="Aura TV onboarding screenshot">
-                    <div class="shot-title">Bring your own playlist</div>
-                    <div class="shot-copy">First launch explains that Aura TV is a player for sources you add yourself.</div>
+                    <div class="shot-media">
+                        <img src="./assets/raw-02.png" alt="Aura TV source import screen">
+                    </div>
+                    <div class="shot-label">Import</div>
+                    <div class="shot-title">Bring in your own source</div>
+                    <div class="shot-copy">Add an M3U playlist URL, a local M3U file, or Xtream-compatible credentials from a source you control.</div>
                 </article>
                 <article class="shot">
-                    <img src="./assets/screenshots/iphone-6_9/02_add_source.png" alt="Aura TV source import screenshot">
-                    <div class="shot-title">Import M3U or Xtream</div>
-                    <div class="shot-copy">Add an M3U URL, local file, or Xtream-compatible credentials from a source you control.</div>
+                    <div class="shot-media">
+                        <img src="./assets/raw-03.png" alt="Aura TV live playback screen">
+                    </div>
+                    <div class="shot-label">Live TV</div>
+                    <div class="shot-title">Browse live channels with guide context</div>
+                    <div class="shot-copy">See categories, channel rows, now-playing state, and schedule context when EPG or XMLTV data is available.</div>
                 </article>
                 <article class="shot">
-                    <img src="./assets/screenshots/iphone-6_9/03_live.png" alt="Aura TV live guide screenshot">
-                    <div class="shot-title">Watch live with guide data</div>
-                    <div class="shot-copy">See channel rows, now-playing state, and schedule context when guide data is available.</div>
-                </article>
-                <article class="shot">
-                    <img src="./assets/screenshots/iphone-6_9/04_movies.png" alt="Aura TV movies screenshot">
-                    <div class="shot-title">Keep movies organized</div>
-                    <div class="shot-copy">Separate on-demand titles into a clean, searchable library.</div>
-                </article>
-                <article class="shot">
-                    <img src="./assets/screenshots/iphone-6_9/05_series.png" alt="Aura TV series screenshot">
-                    <div class="shot-title">Track series and progress</div>
-                    <div class="shot-copy">Continue watching across the library you created from your own playlists.</div>
-                </article>
-                <article class="shot">
-                    <img src="./assets/screenshots/iphone-6_9/06_settings.png" alt="Aura TV settings screenshot">
-                    <div class="shot-title">Control sync and playback</div>
-                    <div class="shot-copy">Manage support, privacy, restore purchases, and premium settings in one place.</div>
+                    <div class="shot-media">
+                        <img src="./assets/raw-06.png" alt="Aura TV settings screen">
+                    </div>
+                    <div class="shot-label">Settings</div>
+                    <div class="shot-title">Control sync, playback, and premium</div>
+                    <div class="shot-copy">Manage playlists, restore purchases, open support and privacy links, and keep device preferences in one place.</div>
                 </article>
             </div>
         </section>
