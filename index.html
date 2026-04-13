@@ -312,15 +312,12 @@
         }
 
         .section {
-            padding: 26px 0;
+            padding: 40px 0;
         }
 
         .section-heading {
-            display: flex;
-            justify-content: space-between;
-            align-items: end;
-            gap: 20px;
-            margin-bottom: 18px;
+            display: block;
+            margin-bottom: 26px;
         }
 
         .section-heading h2 {
@@ -330,15 +327,16 @@
         }
 
         .section-heading p {
+            margin-top: 12px;
             color: var(--muted);
-            max-width: 52ch;
+            max-width: 62ch;
             line-height: 1.7;
         }
 
         .cards {
             display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-            gap: 18px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
         }
 
         .card {
@@ -377,10 +375,12 @@
         .shot-grid {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 18px;
+            gap: 22px;
         }
 
         .shot {
+            display: flex;
+            flex-direction: column;
             background: linear-gradient(180deg, rgba(255, 255, 255, 0.90), rgba(248, 244, 238, 0.84));
             border: 1px solid rgba(23, 32, 43, 0.08);
             border-radius: 34px;
@@ -414,7 +414,7 @@
         .shot-copy {
             margin-top: 6px;
             color: var(--muted);
-            font-size: 0.94rem;
+            font-size: 0.9rem;
             line-height: 1.65;
         }
 
@@ -430,6 +430,10 @@
             font-weight: 700;
             letter-spacing: 0.04em;
             text-transform: uppercase;
+        }
+
+        #screenshots {
+            padding-bottom: 80px;
         }
 
         .faq-grid,
@@ -493,10 +497,6 @@
         }
 
         @media (max-width: 1040px) {
-            .cards {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-
             .shot-grid {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
             }
@@ -516,14 +516,16 @@
             .section-heading p {
                 margin-top: 12px;
             }
+
+            .cards,
+            .shot-grid,
+            .faq-grid,
+            .policy-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 640px) {
-            .cards,
-            .shot-grid {
-                grid-template-columns: 1fr;
-            }
-
             .topbar-inner,
             .shell {
                 width: min(100% - 22px, var(--content));
