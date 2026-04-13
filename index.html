@@ -8,7 +8,6 @@
         name="description"
         content="Aura TV is an IPTV player for the playlists, credentials, and guide data you add yourself. Import M3U or Xtream sources, sync with iCloud, and start with a 7-day free trial."
     >
-    <meta name="apple-itunes-app" content="app-id=6762010608, app-argument=https://apps.apple.com/app/id6762010608">
     <meta property="og:title" content="Aura TV — IPTV Player for Your Own Playlists">
     <meta
         property="og:description"
@@ -165,6 +164,14 @@
         .button-secondary {
             background: rgba(255, 255, 255, 0.78);
             border: 1px solid rgba(23, 32, 43, 0.10);
+        }
+
+        .button-disabled {
+            color: var(--muted-soft);
+            background: rgba(23, 32, 43, 0.06);
+            border: 1px solid rgba(23, 32, 43, 0.08);
+            box-shadow: none;
+            cursor: default;
         }
 
         .hero {
@@ -525,7 +532,7 @@
             </div>
             <div class="top-actions">
                 <a class="button button-secondary" href="./support/">Support</a>
-                <a class="button button-primary" href="https://apps.apple.com/app/id6762010608">View on the App Store</a>
+                <span class="button button-disabled" aria-disabled="true">App Store page after review</span>
             </div>
         </div>
     </header>
@@ -548,9 +555,12 @@
                         Users are responsible for the sources, guide feeds, artwork, and media they choose to add.
                     </p>
                     <div class="hero-actions">
-                        <a class="button button-primary" href="https://apps.apple.com/app/id6762010608">Download on the App Store</a>
+                        <a class="button button-primary" href="./support/">Contact support</a>
                         <a class="button button-secondary" href="./privacy/">Privacy Policy</a>
                     </div>
+                    <p class="hero-note" style="margin-top: 14px;">
+                        The public App Store product page will be linked here after Apple review is complete.
+                    </p>
                     <div class="badges">
                         <div class="badge">M3U playlists</div>
                         <div class="badge">Xtream-compatible login</div>
