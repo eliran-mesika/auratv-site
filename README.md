@@ -12,8 +12,10 @@ Static GitHub Pages site for the public Aura TV App Store URLs.
 ## App Store Connect
 
 - Apple ID: `6762010608`
-- Support email: `mesikaeliran@gmail.com`
+- Publisher: `Eliran Mesika`
+- Public support contact: `mesikaeliran@gmail.com`
 - Subscription model: 7-day free trial, then annual auto-renewable subscription
+- The support, privacy, and terms pages should keep the same player-only language and public contact identity used in App Store Connect.
 
 ## Publish
 
