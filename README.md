@@ -4,16 +4,16 @@ Static GitHub Pages site for the public Aura TV App Store URLs.
 
 ## Intended URLs
 
-- Marketing: `https://eliran-mesika.github.io/auratv-site/`
-- Support: `https://eliran-mesika.github.io/auratv-site/support/`
-- Privacy: `https://eliran-mesika.github.io/auratv-site/privacy/`
-- Terms: `https://eliran-mesika.github.io/auratv-site/terms/`
+- Marketing: `https://auratv.mesikalabs.com/`
+- Support: `https://auratv.mesikalabs.com/support/`
+- Privacy: `https://auratv.mesikalabs.com/privacy/`
+- Terms: `https://auratv.mesikalabs.com/terms/`
 
 ## App Store Connect
 
 - Apple ID: `6762010608`
 - Publisher: `Eliran Mesika`
-- Public support contact: `mesikaeliran@gmail.com`
+- Public support contact: `auratv@mesikalabs.com`
 - First-release model: free-first player submission with no gated App Store product unlocks exposed
 - The support, privacy, and terms pages should keep the same player-only language and public contact identity used in App Store Connect.
 
