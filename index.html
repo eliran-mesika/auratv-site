@@ -15,7 +15,16 @@
     >
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://auratv.mesikalabs.com/">
+    <meta property="og:image" content="https://auratv.mesikalabs.com/assets/og-image.png">
+    <meta property="og:image:alt" content="Aura TV app icon">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://auratv.mesikalabs.com/assets/og-image.png">
+    <meta name="theme-color" content="#1464d2">
     <link rel="canonical" href="https://auratv.mesikalabs.com/">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png">
+    <link rel="manifest" href="./site.webmanifest">
     <style>
         :root {
             --bg: #f6f4ef;
@@ -247,7 +256,7 @@
             font-weight: 600;
         }
 
-        .pricing-card,
+        .release-card,
         .card,
         .faq-card,
         .policy-card {
@@ -257,13 +266,13 @@
             box-shadow: var(--shadow-xl);
         }
 
-        .pricing-card {
+        .release-card {
             padding: 28px;
             position: relative;
             overflow: hidden;
         }
 
-        .pricing-card::before {
+        .release-card::before {
             content: "";
             position: absolute;
             inset: auto auto -80px -80px;
@@ -273,7 +282,7 @@
             background: radial-gradient(circle, rgba(20, 100, 210, 0.18), transparent 70%);
         }
 
-        .pricing-label {
+        .release-label {
             color: var(--gold);
             font-size: 0.86rem;
             font-weight: 800;
@@ -281,7 +290,7 @@
             text-transform: uppercase;
         }
 
-        .pricing-price {
+        .release-title {
             margin-top: 18px;
             font-family: "Iowan Old Style", "Palatino Linotype", serif;
             font-size: 3.2rem;
@@ -289,19 +298,19 @@
             letter-spacing: -0.05em;
         }
 
-        .pricing-copy {
+        .release-copy {
             margin-top: 14px;
             color: var(--muted);
             line-height: 1.7;
         }
 
-        .pricing-list {
+        .release-list {
             margin-top: 18px;
             display: grid;
             gap: 12px;
         }
 
-        .pricing-list div {
+        .release-list div {
             padding: 14px 16px;
             background: rgba(255, 255, 255, 0.78);
             border: 1px solid rgba(23, 32, 43, 0.07);
@@ -590,14 +599,14 @@
                     </div>
                 </div>
 
-                <aside class="pricing-card">
-                    <div class="pricing-label">Review-ready build</div>
-                    <div class="pricing-price">Free-first release</div>
-                    <p class="pricing-copy">
+                <aside class="release-card">
+                    <div class="release-label">Review-ready build</div>
+                    <div class="release-title">Free-first release</div>
+                    <p class="release-copy">
                         This first App Store submission focuses on the player, safe demo, and user-provided import flow.
                         No gated App Store product unlocks are enabled or advertised in this build.
                     </p>
-                    <div class="pricing-list">
+                    <div class="release-list">
                         <div><strong>Player-only product.</strong> Aura TV does not provide channels, catalogs, or content access of its own.</div>
                         <div><strong>Review-safe demo.</strong> First launch includes a neutral sample library for App Review and user onboarding.</div>
                         <div><strong>Publisher.</strong> Eliran Mesika</div>
