@@ -21,6 +21,7 @@ Static GitHub Pages site for the public Aura TV App Store URLs.
 
 - `assets/app-icon.png` mirrors the approved iOS 1024 icon from the Aura TV app repo.
 - Favicon, Apple touch icon, manifest icons, and Open Graph image assets are generated from the same approved icon source.
+- `assets/og-image.png` is the 1200 x 630 social share export from the app repo's `scripts/generate_social_asset_pack.py`.
 - Pages link `site.webmanifest`, favicon PNGs, Apple touch icon, and social preview metadata so public brand surfaces stay consistent.
 
 ## Social Identity
