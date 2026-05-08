@@ -23,6 +23,12 @@ Static GitHub Pages site for the public Aura TV App Store URLs.
 - Favicon, Apple touch icon, manifest icons, and Open Graph image assets are generated from the same approved icon source.
 - Pages link `site.webmanifest`, favicon PNGs, Apple touch icon, and social preview metadata so public brand surfaces stay consistent.
 
+## Social Identity
+
+- Social profile copy and handle choices are drafted in the app repo under `/Users/eliranmesika/Repos/Iptv/Aura-TV-Smart-IPTV-Player/docs/marketing/`.
+- Use `aura-tv-social-identity-guardrails.md` as the policy source, `aura-tv-social-identity-kit.md` for profile copy, and `aura-tv-handle-registry.md` for handle fallback order.
+- Do not add social profile links to this site until the matching profiles are MesikaLabs-controlled, verified in the registry, and approved for public linking.
+
 ## Validation
 
 ```bash

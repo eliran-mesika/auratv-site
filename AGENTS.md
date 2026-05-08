@@ -22,6 +22,11 @@ Use `auratv@mesikalabs.com` for Aura TV support surfaces and the policy-specific
 - Favicon, Apple touch icon, manifest icons, and Open Graph image assets should be regenerated from that same approved icon source.
 - Keep homepage, support, privacy, terms, metadata, and manifest copy consistent with the free player-only App Store packet.
 
+## Social Link Guardrail
+
+- Social profile copy and handle choices live in `/Users/eliranmesika/Repos/Iptv/Aura-TV-Smart-IPTV-Player/docs/marketing/`.
+- Do not add social profile links to this site until the matching profiles are MesikaLabs-controlled, recorded in the Aura TV handle registry, and explicitly approved for public linking.
+
 ## Validation
 
 - Icon parity: `shasum -a 256 assets/app-icon.png /Users/eliranmesika/Repos/Iptv/Aura-TV-Smart-IPTV-Player/IPTVPlayer/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon-1024.png`
