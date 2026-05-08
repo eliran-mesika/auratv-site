@@ -3,7 +3,7 @@
 ## Product Focus
 
 - This repo is the static public site for Aura TV App Store URLs.
-- Keep the site aligned with the free, player-only Aura TV positioning.
+- Keep the site aligned with the player-only Aura TV positioning.
 - Aura TV does not provide channels, playlists, broadcaster accounts, catalogs, or content access.
 - Do not add money-gated product copy unless the active App Store release plan explicitly reintroduces that positioning.
 
@@ -21,7 +21,7 @@ Use `auratv@mesikalabs.com` for Aura TV support surfaces and the policy-specific
 - `assets/app-icon.png` must mirror the approved iOS 1024 icon from `/Users/eliranmesika/Repos/Iptv/Aura-TV-Smart-IPTV-Player/IPTVPlayer/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon-1024.png`.
 - Favicon, Apple touch icon, manifest icons, and Open Graph image assets should be regenerated from that same approved icon source.
 - `assets/og-image.png` is the 1200 x 630 social share export produced by `/Users/eliranmesika/Repos/Iptv/Aura-TV-Smart-IPTV-Player/scripts/generate_social_asset_pack.py`.
-- Keep homepage, support, privacy, terms, metadata, and manifest copy consistent with the free player-only App Store packet.
+- Keep homepage, support, privacy, terms, metadata, and manifest copy consistent with the player-only App Store packet.
 
 ## Social Link Guardrail
 

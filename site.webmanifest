@@ -1,7 +1,7 @@
 {
   "name": "Aura TV",
   "short_name": "Aura TV",
-  "description": "A free IPTV player for user-provided playlists, credentials, and guide data.",
+  "description": "An IPTV player for user-provided playlists, credentials, and guide data.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
