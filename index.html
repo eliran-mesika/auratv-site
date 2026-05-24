@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aura TV — IPTV Player for Your Own Playlists</title>
+    <title>Aura TV Premium — IPTV Player for Your Own Playlists</title>
     <meta
         name="description"
-        content="Aura TV is an IPTV player for playlists, credentials, and guide data you add yourself. Import M3U or Xtream-compatible sources, keep your library organized, and use optional Apple sync features."
+        content="Aura TV Premium is an IPTV player for playlists, credentials, and guide data you add yourself. Premium keeps the player available without providing channels, playlists, or content access."
     >
-    <meta property="og:title" content="Aura TV — IPTV Player for Your Own Playlists">
+    <meta property="og:title" content="Aura TV Premium — IPTV Player for Your Own Playlists">
     <meta
         property="og:description"
-        content="Import your own M3U playlists, Xtream-compatible credentials, and guide data. Aura TV does not include channels or content access."
+        content="Premium access for the Aura TV player. Import your own M3U playlists, Xtream-compatible credentials, and guide data. Aura TV does not include channels or content access."
     >
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://auratv.mesikalabs.com/">
@@ -324,6 +324,11 @@
             padding: 40px 0;
         }
 
+        .section:not(:first-child) {
+            content-visibility: auto;
+            contain-intrinsic-size: auto 620px;
+        }
+
         .section-heading {
             display: block;
             margin-bottom: 26px;
@@ -554,7 +559,7 @@
     <header class="topbar">
         <div class="topbar-inner">
             <div class="brand">
-                <img class="brand-icon" src="./assets/app-icon.png" alt="Aura TV app icon">
+                <img class="brand-icon" src="./assets/app-icon.png" alt="Aura TV app icon" width="1024" height="1024" fetchpriority="high">
                 <div class="brand-copy">
                     <div class="brand-name">Aura TV</div>
                     <div class="brand-subtitle">IPTV player for playlists you add yourself</div>
@@ -562,7 +567,7 @@
             </div>
             <div class="top-actions">
                 <a class="button button-secondary" href="./support/">Support</a>
-                <span class="launch-note">App Store page goes live after Apple review.</span>
+                <span class="launch-note">Premium packet submitted through App Store review. Availability follows Apple approval.</span>
             </div>
         </div>
     </header>
@@ -575,13 +580,13 @@
                         <span class="eyebrow-dot"></span>
                         User-provided playlists only
                     </div>
-                    <h1>Import your playlist. Keep everything in sync.</h1>
+                    <h1>Aura TV Premium</h1>
                     <p class="hero-lead">
-                        Aura TV is an IPTV player for the playlists, credentials, and guide data you already use.
-                        Import M3U or Xtream-compatible sources, browse live channels, movies, and series, and keep your library organized across your Apple devices.
+                        Premium keeps the Aura TV player available for the playlists, credentials, and guide data you already use.
+                        Import M3U or Xtream-compatible sources, browse your own library, and keep setup organized across your Apple devices.
                     </p>
                     <p class="hero-note">
-                        Aura TV does not include channels, media catalogs, broadcaster accounts, or content access.
+                        Aura TV does not include channels, playlists, media catalogs, broadcaster accounts, sports packages, movies, or content access.
                         Users are responsible for the sources, guide feeds, artwork, and media they choose to add.
                     </p>
                     <div class="hero-actions">
@@ -589,7 +594,7 @@
                         <a class="button button-secondary" href="./privacy/">Privacy Policy</a>
                     </div>
                     <p class="hero-note" style="margin-top: 14px;">
-                        The public App Store product page will be linked here after Apple review is complete.
+                        Premium options are a weekly subscription with a 7-day introductory trial when Apple reports eligibility, or an annual subscription. Final prices and purchase confirmation are shown by Apple in the app.
                     </p>
                     <div class="badges">
                         <div class="badge">M3U playlists</div>
@@ -600,15 +605,16 @@
                 </div>
 
                 <aside class="release-card">
-                    <div class="release-label">Review-ready build</div>
-                    <div class="release-title">Player-only release</div>
+                    <div class="release-label">Premium release packet</div>
+                    <div class="release-title">Weekly or annual</div>
                     <p class="release-copy">
-                        This App Store submission focuses on the player, safe demo, and user-provided import flow.
-                        No gated App Store product unlocks are enabled or advertised in this build.
+                        Aura TV Premium is paid access to the Aura TV player experience, not to channels or media.
+                        The public App Store packet moves to Premium only after Apple review approval.
                     </p>
                     <div class="release-list">
-                        <div><strong>Player-only product.</strong> Aura TV does not provide channels, catalogs, or content access of its own.</div>
-                        <div><strong>Review-safe demo.</strong> First launch includes a neutral sample library for App Review and user onboarding.</div>
+                        <div><strong>Weekly Premium.</strong> Planned US price is $2.99/week with a 7-day introductory trial when Apple reports eligibility.</div>
+                        <div><strong>Annual Premium.</strong> Planned US price is $5.99/year as an auto-renewing subscription.</div>
+                        <div><strong>Player-only product.</strong> Aura TV does not provide channels, playlists, catalogs, sports, movies, or content access of its own.</div>
                         <div><strong>Publisher.</strong> Eliran Mesika</div>
                         <div><strong>Support contact.</strong> <a href="mailto:auratv@mesikalabs.com">auratv@mesikalabs.com</a></div>
                     </div>
@@ -621,8 +627,8 @@
                 <div>
                     <h2>What Aura TV helps you do</h2>
                 </div>
-                <p>
-                    The app focuses on organization, playback, and cross-device continuity for sources you already control.
+                    <p>
+                        Premium focuses on organization, playback, support, and cross-device continuity for sources you already control.
                     It is designed as a player, not as a broadcaster or catalog service.
                 </p>
             </div>
@@ -642,11 +648,11 @@
                     <h3>Keep everything consistent</h3>
                     <p>Favorites, watch history, and preferences can sync through iCloud so your setup feels continuous across your Apple devices.</p>
                 </article>
-                <article class="card">
-                    <div class="card-icon">04</div>
-                    <h3>Transfer setup between your devices</h3>
-                    <p>Use optional QR transfer on the same local network to move setup details between devices you own, without turning Aura TV into a content service.</p>
-                </article>
+	                <article class="card">
+	                    <div class="card-icon">04</div>
+	                    <h3>Support and billing stay reachable</h3>
+	                    <p>Settings keeps report-a-problem, request-support, restore, terms, and privacy paths available even when Premium is inactive.</p>
+	                </article>
             </div>
         </section>
 
@@ -657,13 +663,13 @@
                 </div>
                 <p>
                     These previews use the actual app UI from the rights-safe review demo.
-                    They show the product more naturally than the App Store marketing exports.
+	                    These will be refreshed from the Premium runtime before release handoff.
                 </p>
             </div>
             <div class="shot-grid">
                 <article class="shot">
                     <div class="shot-media">
-                        <img src="./assets/raw-02.png" alt="Aura TV source import screen">
+	                        <img src="./assets/raw-02.png" alt="Aura TV source import screen" width="1320" height="2868" loading="lazy">
                     </div>
                     <div class="shot-label">Import</div>
                     <div class="shot-title">Bring in your own source</div>
@@ -671,7 +677,7 @@
                 </article>
                 <article class="shot">
                     <div class="shot-media">
-                        <img src="./assets/raw-03.png" alt="Aura TV live playback screen">
+	                        <img src="./assets/raw-03.png" alt="Aura TV live playback screen" width="1320" height="2868" loading="lazy">
                     </div>
                     <div class="shot-label">Live TV</div>
                     <div class="shot-title">Browse live channels with guide context</div>
@@ -679,7 +685,7 @@
                 </article>
                 <article class="shot">
                     <div class="shot-media">
-                        <img src="./assets/raw-06.png" alt="Aura TV settings screen">
+	                        <img src="./assets/raw-06.png" alt="Aura TV settings screen" width="1320" height="2868" loading="lazy">
                     </div>
                     <div class="shot-label">Settings</div>
                     <div class="shot-title">Control sync and playback</div>
@@ -706,10 +712,10 @@
                     <h3>Which formats are supported?</h3>
                     <p>M3U playlist URLs, M3U files, Xtream-compatible credentials, and guide data such as XMLTV or EPG when the source provides it.</p>
                 </article>
-                <article class="faq-card">
-                    <h3>Are player features gated in this release?</h3>
-                    <p>No. This build is submitted as a player experience for user-provided sources. App Review can use the built-in safe demo or import reviewer-provided source data.</p>
-                </article>
+	                <article class="faq-card">
+	                    <h3>What does Premium unlock?</h3>
+	                    <p>Premium unlocks use of the Aura TV player for user-provided sources. It does not unlock channels, playlists, media catalogs, sports, movies, or broadcaster accounts.</p>
+	                </article>
                 <article class="faq-card">
                     <h3>What data syncs through iCloud?</h3>
                     <p>Playlist metadata, preferences, favorites, and watch history may sync through iCloud / CloudKit. Xtream-compatible passwords remain in the device keychain and are not synced via iCloud Keychain.</p>

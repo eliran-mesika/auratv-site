@@ -6,12 +6,12 @@
     <title>Support — Aura TV</title>
     <meta
         name="description"
-        content="Support for Aura TV, an IPTV player for user-provided playlists, credentials, and guide data."
+        content="Support for Aura TV Premium, an IPTV player for user-provided playlists, credentials, and guide data."
     >
     <meta property="og:title" content="Support — Aura TV">
     <meta
         property="og:description"
-        content="Contact Aura TV support for help with importing your own sources, playback, sync, and App Review questions."
+        content="Contact Aura TV support for help with Premium, importing your own sources, playback, sync, and App Review questions."
     >
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://auratv.mesikalabs.com/support/">
@@ -58,49 +58,73 @@
             margin-top: 18px;
             box-shadow: 0 18px 40px rgba(23, 32, 43, 0.08);
         }
+        section {
+            content-visibility: auto;
+            contain-intrinsic-size: auto 360px;
+        }
         a { color: var(--accent); text-decoration: none; }
         a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
     <h1>Support</h1>
-    <p class="muted">Aura TV</p>
+	    <p class="muted">Aura TV Premium</p>
 
     <div class="panel">
         <p><strong>Publisher:</strong> Eliran Mesika</p>
         <p><strong>Support email:</strong> <a href="mailto:auratv@mesikalabs.com">auratv@mesikalabs.com</a></p>
-        <p><strong>Support scope:</strong> Customer support, App Review follow-up, and policy questions for Aura TV.</p>
-        <p><strong>Response time:</strong> We aim to respond within 2 business days.</p>
+	        <p><strong>Support scope:</strong> Customer support, App Review follow-up, and policy questions for Aura TV.</p>
+	        <p><strong>Billing support:</strong> Apple manages purchases, trials, renewals, cancellations, and restore. Contact <a href="mailto:billing@mesikalabs.com">billing@mesikalabs.com</a> for Aura TV billing questions.</p>
+	        <p><strong>Response time:</strong> We aim to respond within 2 business days.</p>
         <p><strong>Supported devices:</strong> iPhone and iPad running iOS / iPadOS 17 or later.</p>
         <p><strong>Account required:</strong> No first-party Aura TV account is required.</p>
         <p><strong>Review flow:</strong> No first-party account is required; the built-in safe demo can be opened on first launch.</p>
     </div>
 
-    <h2>What the app helps with</h2>
-    <ul>
+	    <section>
+	    <h2>What the app helps with</h2>
+	    <ul>
         <li>Importing M3U playlist URLs, M3U files, and Xtream-compatible credentials from sources you control</li>
         <li>Reading guide data such as EPG or XMLTV when your source provides it</li>
         <li>Favorites, watch history, continue watching, and cross-device library continuity</li>
-        <li>Optional QR transfer between your own devices on the same local network</li>
-    </ul>
+	        <li>Optional QR transfer between your own devices on the same local network</li>
+	    </ul>
+	    </section>
 
-    <h2>Troubleshooting</h2>
+	    <section>
+	    <h2>Premium and restore</h2>
+	    <ul>
+	        <li>Premium unlocks player use for sources you add yourself; it does not provide channels, playlists, sports, movies, or content access.</li>
+	        <li>The weekly subscription includes a 7-day introductory trial when Apple reports your Apple ID is eligible.</li>
+	        <li>The annual subscription is an auto-renewing option managed by Apple.</li>
+	        <li>Restore Purchases is available in Settings and uses Apple's StoreKit entitlement state.</li>
+	    </ul>
+	    </section>
+
+	    <section>
+	    <h2>Troubleshooting</h2>
     <ul>
         <li><strong>Source import fails:</strong> confirm the playlist URL, file, host, username, and password are valid and authorized.</li>
         <li><strong>Guide data is missing:</strong> make sure the source includes an EPG or XMLTV feed and that the guide URL is reachable.</li>
         <li><strong>Playback does not start:</strong> check the stream URL from your source and make sure the device still has network access.</li>
-        <li><strong>iCloud sync:</strong> verify iCloud is enabled on the device if you expect playlists or history to appear across your own Apple devices.</li>
-    </ul>
+	        <li><strong>iCloud sync:</strong> verify iCloud is enabled on the device if you expect playlists or history to appear across your own Apple devices.</li>
+	    </ul>
+	    </section>
 
-    <h2>What to include in a support request</h2>
+	    <section>
+	    <h2>What to include in a support request</h2>
     <ul>
         <li>App version and device model</li>
         <li>Whether the issue affects import, guide data, sync, or playback</li>
-        <li>A redacted example of the playlist format or source setup steps, without sending private credentials publicly</li>
-    </ul>
+	        <li>A redacted example of the playlist format or source setup steps, without sending private credentials publicly</li>
+	        <li>Do not include playlist passwords, portal credentials, provider account details, or tokens</li>
+	    </ul>
+	    </section>
 
-    <h2>Legal</h2>
-    <p>Aura TV is a player for user-provided sources. It does not provide channels, catalogs, or content access of its own. Read the <a href="../privacy/">Privacy Policy</a> and <a href="../terms/">Terms of Use</a>.</p>
-    <p>For rights, abuse, or legal questions related to Aura TV itself, use the same support email and include the relevant context in your message.</p>
+	    <section>
+	    <h2>Legal</h2>
+	    <p>Aura TV is a player for user-provided sources. It does not provide channels, catalogs, or content access of its own. Read the <a href="../privacy/">Privacy Policy</a> and <a href="../terms/">Terms of Use</a>.</p>
+	    <p>For rights, abuse, or legal questions related to Aura TV itself, use the same support email and include the relevant context in your message.</p>
+	    </section>
 </body>
 </html>
