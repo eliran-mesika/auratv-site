@@ -44,7 +44,7 @@
             max-width: 780px;
             margin: 0 auto;
         }
-        h1, h2 { font-family: "Iowan Old Style", "Palatino Linotype", serif; letter-spacing: -0.03em; }
+        h1, h2 { font-family: "Iowan Old Style", "Palatino Linotype", serif; letter-spacing: 0; }
         h1 { font-size: 2rem; margin-bottom: 8px; }
         h2 { font-size: 1.3rem; margin: 30px 0 12px; }
         p, li { color: #314154; margin-bottom: 12px; }
@@ -58,11 +58,47 @@
             border: 1px solid var(--line);
             box-shadow: 0 18px 40px rgba(23, 32, 43, 0.08);
         }
+        .policy-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 14px;
+            align-items: center;
+            margin-bottom: 26px;
+            padding-bottom: 18px;
+            border-bottom: 1px solid var(--line);
+        }
+        .policy-brand {
+            display: inline-flex;
+            gap: 10px;
+            align-items: center;
+            color: var(--text);
+            font-weight: 800;
+        }
+        .policy-brand img {
+            width: 38px;
+            height: 38px;
+            border-radius: 12px;
+        }
+        .policy-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
         a { color: var(--accent); text-decoration: none; }
         a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
+    <nav class="policy-nav" aria-label="Privacy navigation">
+        <a class="policy-brand" href="../"><img src="../assets/app-icon.png" alt="" width="1024" height="1024">Aura TV</a>
+        <div class="policy-links">
+            <a href="../">App</a>
+            <a href="../blog/">Blog</a>
+            <a href="../support/">Support</a>
+            <a href="../terms/">Terms</a>
+        </div>
+    </nav>
     <h1>Privacy Policy</h1>
     <p class="muted">Aura TV · Effective date: April 13, 2026</p>
 

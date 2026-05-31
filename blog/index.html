@@ -13,6 +13,7 @@
   <link rel="canonical" href="https://auratv.mesikalabs.com/blog/">
   <link rel="alternate" type="application/json" href="https://auratv.mesikalabs.com/blog/feed.json">
   <link rel="icon" href="../assets/favicon-32.png" type="image/png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
   <style>
     :root { color-scheme: light; --bg: #f6f4ef; --ink: #17202b; --muted: #5f6b7a; --line: #ddd7ca; --accent: #1464d2; }
     * { box-sizing: border-box; }
@@ -20,7 +21,9 @@
     main, header, footer { width: min(100% - 32px, 900px); margin-inline: auto; }
     header { padding: 32px 0 18px; display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
     a { color: inherit; text-underline-offset: 4px; }
-    .brand { font-weight: 850; text-decoration: none; }
+    .brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 850; text-decoration: none; }
+    .brand img { width: 38px; height: 38px; border-radius: 12px; }
+    nav { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
     .hero { padding: 52px 0 34px; border-top: 1px solid var(--line); }
     h1 { margin: 0 0 16px; max-width: 13ch; font-size: 4.2rem; line-height: .95; letter-spacing: 0; }
     p { color: var(--muted); line-height: 1.7; }
@@ -28,15 +31,16 @@
     article h2 { margin-top: 0; }
     .meta { color: var(--accent); font-size: .82rem; font-weight: 850; text-transform: uppercase; }
     footer { padding: 42px 0; color: var(--muted); }
-     (max-width: 640px) { h1 { font-size: 2.65rem; line-height: 1.02; } }
+    @media (max-width: 640px) { h1 { font-size: 2.65rem; line-height: 1.02; } }
   </style>
 </head>
 <body>
   <header>
-    <a class="brand" href="../">Aura TV</a>
+    <a class="brand" href="../"><img src="../assets/app-icon.png" alt="" width="1024" height="1024">Aura TV</a>
     <nav aria-label="Blog navigation">
       <a href="../">App</a>
       <a href="../support/">Support</a>
+      <a href="../privacy/">Privacy</a>
       <a href="feed.json">Feed</a>
     </nav>
   </header>

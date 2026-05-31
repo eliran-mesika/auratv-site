@@ -3,6 +3,7 @@
 ## Product Focus
 
 - This repo is the static public site for Aura TV App Store URLs.
+- Follow `DESIGN.md` for visual rules, navigation structure, icon usage, and player-only screenshot constraints.
 - Keep the site aligned with the player-only Aura TV positioning.
 - Aura TV does not provide channels, playlists, broadcaster accounts, catalogs, or content access.
 - Do not add money-gated product copy unless the active App Store release plan explicitly reintroduces that positioning.

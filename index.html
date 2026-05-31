@@ -606,6 +606,54 @@
             color: var(--muted);
         }
 
+        .resource-panel {
+            display: grid;
+            grid-template-columns: 0.82fr 1.18fr;
+            gap: 20px;
+            align-items: stretch;
+            padding: 24px;
+            border-radius: var(--radius-xl);
+            background: var(--surface);
+            border: 1px solid rgba(23, 32, 43, 0.10);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .resource-list {
+            display: grid;
+            gap: 12px;
+        }
+
+        .resource-card {
+            display: grid;
+            gap: 8px;
+            padding: 18px;
+            border: 1px solid rgba(23, 32, 43, 0.10);
+            border-radius: var(--radius-md);
+            background: rgba(255, 255, 255, 0.76);
+        }
+
+        .resource-card:hover {
+            border-color: rgba(20, 100, 210, 0.28);
+            text-decoration: none;
+        }
+
+        .resource-card span {
+            color: var(--accent);
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .resource-card strong {
+            font-size: 1.08rem;
+        }
+
+        .resource-card p {
+            color: var(--muted);
+            line-height: 1.65;
+        }
+
         @media (max-width: 1040px) {
             .shot-grid {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -614,6 +662,7 @@
 
         @media (max-width: 860px) {
             .hero-grid,
+            .resource-panel,
             .faq-grid,
             .policy-grid {
                 grid-template-columns: 1fr;
@@ -747,6 +796,7 @@
             </div>
             <div class="top-actions">
                 <a class="button button-secondary" href="#screenshots">Screenshots</a>
+                <a class="button button-secondary" href="./blog/">Blog</a>
                 <a class="button button-primary" href="./support/">Support</a>
                 <span class="launch-note">Player-only app. No channels or media included.</span>
             </div>
@@ -902,6 +952,36 @@
         </section>
 
         <section class="section">
+            <div class="resource-panel">
+                <div class="section-heading" style="margin-bottom: 0;">
+                    <div>
+                        <h2>Setup notes without the suspicious promises</h2>
+                    </div>
+                    <p>
+                        Blog and support pages explain the boring-but-important bits: playlists, credentials, guide data, billing, restore, and the fact that a player is not a channel provider.
+                    </p>
+                </div>
+                <div class="resource-list">
+                    <a class="resource-card" href="./blog/iptv-player-without-channels/">
+                        <span>Latest blog</span>
+                        <strong>An IPTV Player Is Not a Secret Channel Machine</strong>
+                        <p>A short field guide to playlists, credentials, EPG files, and not confusing a player with a provider.</p>
+                    </a>
+                    <a class="resource-card" href="./blog/">
+                        <span>Blog index</span>
+                        <strong>IPTV player setup notes</strong>
+                        <p>Crawlable setup guidance for user-provided sources and player-only Aura TV behavior.</p>
+                    </a>
+                    <a class="resource-card" href="./support/">
+                        <span>Support</span>
+                        <strong>Import, playback, sync, and restore</strong>
+                        <p>Support guidance for source imports, EPG, playback, iCloud continuity, and Apple-managed billing.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
             <div class="section-heading">
                 <div>
                     <h2>Policies and support</h2>
@@ -930,6 +1010,7 @@
                 <div style="margin-top: 6px; color: var(--muted);">IPTV player for user-provided playlists and guide data</div>
             </div>
             <div class="footer-links">
+                <a href="./blog/">Blog</a>
                 <a href="./support/">Support</a>
                 <a href="./privacy/">Privacy</a>
                 <a href="./terms/">Terms</a>
