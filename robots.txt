@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://auratv.mesikalabs.com/sitemap.xml
