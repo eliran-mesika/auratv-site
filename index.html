@@ -138,7 +138,8 @@
         .top-actions {
             display: flex;
             flex-wrap: wrap;
-            gap: 12px;
+            justify-content: flex-end;
+            gap: 10px;
         }
 
         .button {
@@ -146,9 +147,9 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
-            border-radius: 999px;
-            padding: 14px 22px;
-            font-size: 0.98rem;
+            border-radius: 8px;
+            padding: 12px 16px;
+            font-size: 0.94rem;
             font-weight: 600;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
@@ -287,7 +288,7 @@
             position: absolute;
             overflow: hidden;
             border: 1px solid rgba(23, 32, 43, 0.14);
-            border-radius: 30px;
+            border-radius: 24px;
             background: #0b1020;
             box-shadow: 0 28px 70px rgba(23, 32, 43, 0.22);
         }
@@ -295,7 +296,7 @@
         .hero-phone img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
             object-position: top center;
         }
 
@@ -481,7 +482,7 @@
         .shot-grid {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 22px;
+            gap: 16px;
         }
 
         .shot {
@@ -489,23 +490,26 @@
             flex-direction: column;
             background: linear-gradient(180deg, rgba(255, 255, 255, 0.90), rgba(248, 244, 238, 0.84));
             border: 1px solid rgba(23, 32, 43, 0.08);
-            border-radius: 34px;
-            padding: 18px;
+            border-radius: 8px;
+            padding: 16px;
             box-shadow: var(--shadow-md);
         }
 
         .shot-media {
+            display: flex;
+            min-height: 420px;
+            align-items: center;
+            justify-content: center;
             padding: 14px;
-            border-radius: 26px;
+            border-radius: 8px;
             background:
                 radial-gradient(circle at top, rgba(20, 100, 210, 0.12), transparent 42%),
                 linear-gradient(180deg, rgba(7, 12, 26, 0.98), rgba(11, 16, 31, 0.92));
-            min-height: 100%;
         }
 
         .shot img {
-            border-radius: 28px;
-            width: min(100%, 270px);
+            border-radius: 18px;
+            width: min(100%, 196px);
             margin: 0 auto;
             box-shadow: 0 22px 44px rgba(0, 0, 0, 0.34);
         }
@@ -539,7 +543,7 @@
         }
 
         #screenshots {
-            padding-bottom: 140px;
+            padding-bottom: 68px;
         }
 
         #faq {
@@ -713,20 +717,20 @@
             }
 
             .top-actions {
-                display: grid;
+                display: flex;
                 width: 100%;
-                grid-template-columns: 1fr;
+                flex-wrap: wrap;
+                justify-content: flex-start;
                 gap: 10px;
             }
 
             .top-actions .button {
-                width: 100%;
                 min-width: 0;
                 padding-inline: 12px;
             }
 
             .launch-note {
-                grid-column: 1 / -1;
+                width: 100%;
             }
 
             h1 {
@@ -780,6 +784,14 @@
                 width: 146px;
                 height: 318px;
                 border-radius: 22px;
+            }
+
+            .shot-media {
+                min-height: 360px;
+            }
+
+            .shot img {
+                width: min(100%, 166px);
             }
         }
     </style>
@@ -890,14 +902,13 @@
                     <h2>Inside the app</h2>
                 </div>
                 <p>
-                    These previews use the actual app UI from the rights-safe review demo.
-	                    These will be refreshed from the Premium runtime before release handoff.
+                    Actual app UI for importing your source, browsing a live guide, and managing player settings. No catalog theater, no mysterious content promises.
                 </p>
             </div>
             <div class="shot-grid">
                 <article class="shot">
                     <div class="shot-media">
-	                        <img src="./assets/raw-02.png" alt="Aura TV source import screen" width="1320" height="2868" loading="lazy">
+	                        <img src="./assets/screenshots/iphone-6_9/02_add_source.png" alt="Aura TV source import screen" width="420" height="912" loading="lazy">
                     </div>
                     <div class="shot-label">Import</div>
                     <div class="shot-title">Bring in your own source</div>
@@ -905,7 +916,7 @@
                 </article>
                 <article class="shot">
                     <div class="shot-media">
-	                        <img src="./assets/raw-03.png" alt="Aura TV live playback screen" width="1320" height="2868" loading="lazy">
+	                        <img src="./assets/screenshots/iphone-6_9/03_live.png" alt="Aura TV live guide screen" width="420" height="912" loading="lazy">
                     </div>
                     <div class="shot-label">Live TV</div>
                     <div class="shot-title">Browse live channels with guide context</div>
@@ -913,7 +924,7 @@
                 </article>
                 <article class="shot">
                     <div class="shot-media">
-	                        <img src="./assets/raw-06.png" alt="Aura TV settings screen" width="1320" height="2868" loading="lazy">
+	                        <img src="./assets/screenshots/iphone-6_9/06_settings.png" alt="Aura TV settings screen" width="420" height="912" loading="lazy">
                     </div>
                     <div class="shot-label">Settings</div>
                     <div class="shot-title">Control sync and playback</div>
@@ -941,8 +952,8 @@
                     <p>M3U playlist URLs, M3U files, Xtream-compatible credentials, and guide data such as XMLTV or EPG when the source provides it.</p>
                 </article>
 	                <article class="faq-card">
-	                    <h3>What does Premium unlock?</h3>
-	                    <p>Premium unlocks use of the Aura TV player for user-provided sources. It does not unlock channels, playlists, media catalogs, sports, movies, or broadcaster accounts.</p>
+	                    <h3>Does Aura TV sell or unlock content?</h3>
+	                    <p>No. Aura TV opens sources the user adds. It does not sell, unlock, or bundle channels, playlists, catalogs, sports, movies, or broadcaster accounts.</p>
 	                </article>
                 <article class="faq-card">
                     <h3>What data syncs through iCloud?</h3>
