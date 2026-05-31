@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aura TV Premium — IPTV Player for Your Own Playlists</title>
+    <title>Aura TV — IPTV Player for Your Own Playlists</title>
     <meta
         name="description"
-        content="Aura TV Premium is an IPTV player for playlists, credentials, and guide data you add yourself. Premium keeps the player available without providing channels, playlists, or content access."
+        content="Aura TV is an IPTV player for playlists, credentials, and guide data you add yourself. Bring your own M3U or Xtream-compatible source. No channels included."
     >
-    <meta property="og:title" content="Aura TV Premium — IPTV Player for Your Own Playlists">
+    <meta property="og:title" content="Aura TV — IPTV Player for Your Own Playlists">
     <meta
         property="og:description"
-        content="Premium access for the Aura TV player. Import your own M3U playlists, Xtream-compatible credentials, and guide data. Aura TV does not include channels or content access."
+        content="Import your own M3U playlists, Xtream-compatible credentials, and guide data. Aura TV is a player and does not include channels or content access."
     >
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://auratv.mesikalabs.com/">
@@ -56,6 +56,7 @@
 
         html {
             scroll-behavior: smooth;
+            overflow-x: hidden;
         }
 
         body {
@@ -67,6 +68,7 @@
                 linear-gradient(180deg, #fffdfa 0%, var(--bg) 46%, #ffffff 100%);
             -webkit-font-smoothing: antialiased;
             text-rendering: optimizeLegibility;
+            overflow-x: hidden;
         }
 
         img {
@@ -124,7 +126,7 @@
         .brand-name {
             font-size: 1rem;
             font-weight: 700;
-            letter-spacing: -0.02em;
+            letter-spacing: 0;
         }
 
         .brand-subtitle {
@@ -184,6 +186,10 @@
             align-items: start;
         }
 
+        .hero-grid > * {
+            min-width: 0;
+        }
+
         .eyebrow {
             display: inline-flex;
             gap: 10px;
@@ -209,10 +215,11 @@
         h1 {
             margin-top: 22px;
             font-family: "Iowan Old Style", "Palatino Linotype", serif;
-            font-size: clamp(2.8rem, 6vw, 5.2rem);
+            font-size: 5rem;
             line-height: 0.94;
-            letter-spacing: -0.05em;
-            max-width: 11ch;
+            letter-spacing: 0;
+            max-width: 12ch;
+            overflow-wrap: break-word;
         }
 
         .hero-lead {
@@ -221,6 +228,7 @@
             color: var(--muted);
             font-size: 1.12rem;
             line-height: 1.75;
+            overflow-wrap: anywhere;
         }
 
         .hero-note {
@@ -228,6 +236,7 @@
             color: var(--muted-soft);
             font-size: 0.95rem;
             line-height: 1.65;
+            overflow-wrap: break-word;
         }
 
         .hero-actions {
@@ -248,12 +257,95 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
+            max-width: 100%;
             padding: 10px 14px;
             border-radius: 999px;
             background: rgba(255, 255, 255, 0.82);
             border: 1px solid rgba(23, 32, 43, 0.08);
             font-size: 0.92rem;
             font-weight: 600;
+            white-space: normal;
+        }
+
+        .hero-product {
+            position: relative;
+            min-height: 620px;
+            isolation: isolate;
+        }
+
+        .hero-product::before {
+            content: "";
+            position: absolute;
+            inset: 42px 20px 24px;
+            z-index: -1;
+            border-radius: 34px;
+            background: linear-gradient(135deg, rgba(20, 100, 210, 0.18), rgba(200, 128, 47, 0.14));
+            filter: blur(18px);
+        }
+
+        .hero-phone {
+            position: absolute;
+            overflow: hidden;
+            border: 1px solid rgba(23, 32, 43, 0.14);
+            border-radius: 30px;
+            background: #0b1020;
+            box-shadow: 0 28px 70px rgba(23, 32, 43, 0.22);
+        }
+
+        .hero-phone img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+        }
+
+        .hero-phone-main {
+            inset: 0 88px 0 auto;
+            width: 300px;
+            z-index: 3;
+        }
+
+        .hero-phone-import {
+            top: 86px;
+            left: 0;
+            width: 235px;
+            height: 510px;
+            transform: rotate(-8deg);
+            z-index: 2;
+        }
+
+        .hero-phone-library {
+            top: 84px;
+            right: 0;
+            width: 226px;
+            height: 492px;
+            transform: rotate(7deg);
+            z-index: 1;
+        }
+
+        .hero-proof {
+            position: absolute;
+            right: 28px;
+            bottom: 34px;
+            z-index: 4;
+            width: min(320px, calc(100% - 56px));
+            padding: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.62);
+            border-radius: 22px;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 22px 50px rgba(23, 32, 43, 0.16);
+            backdrop-filter: blur(16px);
+        }
+
+        .hero-proof strong,
+        .hero-proof span {
+            display: block;
+        }
+
+        .hero-proof span {
+            margin-top: 6px;
+            color: var(--muted);
+            line-height: 1.5;
         }
 
         .release-card,
@@ -295,7 +387,7 @@
             font-family: "Iowan Old Style", "Palatino Linotype", serif;
             font-size: 3.2rem;
             line-height: 0.95;
-            letter-spacing: -0.05em;
+            letter-spacing: 0;
         }
 
         .release-copy {
@@ -336,8 +428,8 @@
 
         .section-heading h2 {
             font-family: "Iowan Old Style", "Palatino Linotype", serif;
-            font-size: clamp(2rem, 4vw, 3rem);
-            letter-spacing: -0.04em;
+            font-size: 3rem;
+            letter-spacing: 0;
         }
 
         .section-heading p {
@@ -362,7 +454,7 @@
             margin-top: 12px;
             margin-bottom: 10px;
             font-size: 1.08rem;
-            letter-spacing: -0.02em;
+            letter-spacing: 0;
         }
 
         .card p,
@@ -422,7 +514,7 @@
             margin-top: 16px;
             font-size: 1.06rem;
             font-weight: 700;
-            letter-spacing: -0.02em;
+            letter-spacing: 0;
         }
 
         .shot-copy {
@@ -470,7 +562,7 @@
         .faq-card h3,
         .policy-card h3 {
             margin-bottom: 10px;
-            letter-spacing: -0.02em;
+            letter-spacing: 0;
         }
 
         .summary-panel {
@@ -484,7 +576,7 @@
         .summary-panel h3 {
             margin-bottom: 10px;
             font-size: 1.2rem;
-            letter-spacing: -0.02em;
+            letter-spacing: 0;
         }
 
         .summary-panel ul {
@@ -527,6 +619,22 @@
                 grid-template-columns: 1fr;
             }
 
+            .hero-product {
+                min-height: 540px;
+            }
+
+            .hero-phone-main {
+                right: 50%;
+                width: 260px;
+                transform: translateX(50%);
+            }
+
+            .hero-phone-import,
+            .hero-phone-library {
+                width: 190px;
+                height: 414px;
+            }
+
             .section-heading {
                 display: block;
             }
@@ -546,11 +654,83 @@
         @media (max-width: 640px) {
             .topbar-inner,
             .shell {
-                width: min(100% - 22px, var(--content));
+                width: calc(100vw - 22px);
+                max-width: calc(100vw - 22px);
+            }
+
+            .topbar-inner {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .top-actions {
+                display: grid;
+                width: 100%;
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .top-actions .button {
+                width: 100%;
+                min-width: 0;
+                padding-inline: 12px;
+            }
+
+            .launch-note {
+                grid-column: 1 / -1;
             }
 
             h1 {
-                max-width: none;
+                max-width: 9ch;
+                font-size: 2.75rem;
+                line-height: 1.02;
+            }
+
+            .section-heading h2 {
+                font-size: 2.25rem;
+            }
+
+            .badges {
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+
+            .hero-grid,
+            .hero-lead,
+            .hero-note {
+                max-width: calc(100vw - 22px);
+            }
+
+            .hero-grid > *,
+            .hero-lead,
+            .hero-note {
+                width: calc(100vw - 22px);
+            }
+
+            .hero-lead,
+            .hero-note {
+                width: min(32ch, calc(100vw - 22px));
+            }
+
+            .hero-lead {
+                font-size: 1rem;
+                line-height: 1.65;
+            }
+
+            .hero-product {
+                min-height: 470px;
+            }
+
+            .hero-phone-main {
+                width: 218px;
+            }
+
+            .hero-phone-import,
+            .hero-phone-library {
+                top: 100px;
+                width: 146px;
+                height: 318px;
+                border-radius: 22px;
             }
         }
     </style>
@@ -566,8 +746,9 @@
                 </div>
             </div>
             <div class="top-actions">
-                <a class="button button-secondary" href="./support/">Support</a>
-                <span class="launch-note">Premium packet submitted through App Store review. Availability follows Apple approval.</span>
+                <a class="button button-secondary" href="#screenshots">Screenshots</a>
+                <a class="button button-primary" href="./support/">Support</a>
+                <span class="launch-note">Player-only app. No channels or media included.</span>
             </div>
         </div>
     </header>
@@ -580,22 +761,19 @@
                         <span class="eyebrow-dot"></span>
                         User-provided playlists only
                     </div>
-                    <h1>Aura TV Premium</h1>
+                    <h1>IPTV player for<br>your own playlists.</h1>
                     <p class="hero-lead">
-                        Premium keeps the Aura TV player available for the playlists, credentials, and guide data you already use.
-                        Import M3U or Xtream-compatible sources, browse your own library, and keep setup organized across your Apple devices.
+                        Aura TV helps organize the playlists, Xtream-compatible credentials, and guide data you already use.
+                        Import your source, browse live TV, movies, and series, and keep the player focused on your setup.
                     </p>
                     <p class="hero-note">
                         Aura TV does not include channels, playlists, media catalogs, broadcaster accounts, sports packages, movies, or content access.
                         Users are responsible for the sources, guide feeds, artwork, and media they choose to add.
                     </p>
                     <div class="hero-actions">
-                        <a class="button button-primary" href="./support/">Open support</a>
-                        <a class="button button-secondary" href="./privacy/">Privacy Policy</a>
+                        <a class="button button-primary" href="#screenshots">See the app</a>
+                        <a class="button button-secondary" href="./support/">Open support</a>
                     </div>
-                    <p class="hero-note" style="margin-top: 14px;">
-                        Premium options are a weekly subscription with a 7-day introductory trial when Apple reports eligibility, or an annual subscription. Final prices and purchase confirmation are shown by Apple in the app.
-                    </p>
                     <div class="badges">
                         <div class="badge">M3U playlists</div>
                         <div class="badge">Xtream-compatible login</div>
@@ -604,19 +782,19 @@
                     </div>
                 </div>
 
-                <aside class="release-card">
-                    <div class="release-label">Premium release packet</div>
-                    <div class="release-title">Weekly or annual</div>
-                    <p class="release-copy">
-                        Aura TV Premium is paid access to the Aura TV player experience, not to channels or media.
-                        The public App Store packet moves to Premium only after Apple review approval.
-                    </p>
-                    <div class="release-list">
-                        <div><strong>Weekly Premium.</strong> Planned US price is $2.99/week with a 7-day introductory trial when Apple reports eligibility.</div>
-                        <div><strong>Annual Premium.</strong> Planned US price is $5.99/year as an auto-renewing subscription.</div>
-                        <div><strong>Player-only product.</strong> Aura TV does not provide channels, playlists, catalogs, sports, movies, or content access of its own.</div>
-                        <div><strong>Publisher.</strong> Eliran Mesika</div>
-                        <div><strong>Support contact.</strong> <a href="mailto:auratv@mesikalabs.com">auratv@mesikalabs.com</a></div>
+                <aside class="hero-product" aria-label="Aura TV app screenshots">
+                    <div class="hero-phone hero-phone-import">
+                        <img src="./assets/screenshots/iphone-6_9/02_add_source.png" alt="Aura TV add source screen for M3U and Xtream-compatible playlists" width="420" height="912" loading="eager">
+                    </div>
+                    <div class="hero-phone hero-phone-main">
+                        <img src="./assets/screenshots/iphone-6_9/03_live.png" alt="Aura TV live guide screen with user-provided channels" width="420" height="912" fetchpriority="high">
+                    </div>
+                    <div class="hero-phone hero-phone-library">
+                        <img src="./assets/screenshots/iphone-6_9/04_movies.png" alt="Aura TV movies library screen for user-provided sources" width="420" height="912" loading="eager">
+                    </div>
+                    <div class="hero-proof">
+                        <strong>Important, because apparently this needs saying:</strong>
+                        <span>Aura TV is the player. Your playlist is the content source.</span>
                     </div>
                 </aside>
             </div>

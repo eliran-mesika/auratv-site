@@ -8,7 +8,9 @@
       "date": "2026-05-31",
       "app": "Aura TV",
       "category": "IPTV Player Setup",
-      "summary": "A short field guide to playlists, credentials, EPG files, and not confusing a player with a provider."
+      "summary": "A short field guide to playlists, credentials, EPG files, and not confusing a player with a provider.",
+      "image": "https://auratv.mesikalabs.com/assets/blog/aura-live-guide-thumb.png",
+      "imageAlt": "Aura TV live guide thumbnail"
     }
   ]
 }
