@@ -1,0 +1,14 @@
+{
+  "title": "Aura TV Blog",
+  "home": "https://auratv.mesikalabs.com/blog/",
+  "items": [
+    {
+      "title": "An IPTV Player Is Not a Secret Channel Machine",
+      "url": "https://auratv.mesikalabs.com/blog/iptv-player-without-channels/",
+      "date": "2026-05-31",
+      "app": "Aura TV",
+      "category": "IPTV Player Setup",
+      "summary": "A short field guide to playlists, credentials, EPG files, and not confusing a player with a provider."
+    }
+  ]
+}

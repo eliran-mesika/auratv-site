@@ -33,5 +33,5 @@ Use `auratv@mesikalabs.com` for Aura TV support surfaces and the policy-specific
 - Icon parity: `shasum -a 256 assets/app-icon.png /Users/eliranmesika/Repos/Iptv/Aura-TV-Smart-IPTV-Player/IPTVPlayer/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon-1024.png`
 - Asset dimensions: `sips -g pixelWidth -g pixelHeight assets/app-icon.png assets/apple-touch-icon.png assets/favicon-32.png assets/favicon-16.png assets/icon-192.png assets/icon-512.png assets/og-image.png`
 - Brand metadata scan: `grep -RInE 'app-icon|apple-touch-icon|favicon|og:image|twitter:image|manifest' . --exclude-dir=.git`
-- Local smoke test: `python3 -m http.server 8087 --bind 127.0.0.1`, then check `/`, `/support/`, `/privacy/`, `/terms/`, `/assets/app-icon.png`, and `/site.webmanifest`.
+- Local smoke test: `python3 -m http.server 8087 --bind 127.0.0.1`, then check `/`, `/support/`, `/privacy/`, `/terms/`, `/blog/`, `/blog/feed.json`, `/assets/app-icon.png`, and `/site.webmanifest`.
 - Hosted URL checks: `curl -I -L https://auratv.mesikalabs.com/ https://auratv.mesikalabs.com/support/ https://auratv.mesikalabs.com/privacy/ https://auratv.mesikalabs.com/terms/`

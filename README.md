@@ -8,6 +8,8 @@ Static GitHub Pages site for the public Aura TV App Store URLs.
 - Support: `https://auratv.mesikalabs.com/support/`
 - Privacy: `https://auratv.mesikalabs.com/privacy/`
 - Terms: `https://auratv.mesikalabs.com/terms/`
+- Blog: `https://auratv.mesikalabs.com/blog/`
+- Blog feed: `https://auratv.mesikalabs.com/blog/feed.json`
 - Robots: `https://auratv.mesikalabs.com/robots.txt`
 - Sitemap: `https://auratv.mesikalabs.com/sitemap.xml`
 
@@ -38,7 +40,7 @@ Static GitHub Pages site for the public Aura TV App Store URLs.
 shasum -a 256 assets/app-icon.png /Users/eliranmesika/Repos/Iptv/Aura-TV-Smart-IPTV-Player/IPTVPlayer/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon-1024.png
 sips -g pixelWidth -g pixelHeight assets/app-icon.png assets/apple-touch-icon.png assets/favicon-32.png assets/favicon-16.png assets/icon-192.png assets/icon-512.png assets/og-image.png
 grep -RInE 'app-icon|apple-touch-icon|favicon|og:image|twitter:image|manifest' . --exclude-dir=.git
-curl -I -L https://auratv.mesikalabs.com/ https://auratv.mesikalabs.com/support/ https://auratv.mesikalabs.com/privacy/ https://auratv.mesikalabs.com/terms/ https://auratv.mesikalabs.com/robots.txt https://auratv.mesikalabs.com/sitemap.xml
+curl -I -L https://auratv.mesikalabs.com/ https://auratv.mesikalabs.com/support/ https://auratv.mesikalabs.com/privacy/ https://auratv.mesikalabs.com/terms/ https://auratv.mesikalabs.com/blog/ https://auratv.mesikalabs.com/blog/feed.json https://auratv.mesikalabs.com/robots.txt https://auratv.mesikalabs.com/sitemap.xml
 ```
 
 ## Publish
