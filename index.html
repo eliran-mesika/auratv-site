@@ -497,7 +497,8 @@
 
         .shot-media {
             display: flex;
-            min-height: 420px;
+            height: 610px;
+            min-height: 0;
             align-items: center;
             justify-content: center;
             padding: 14px;
@@ -510,6 +511,9 @@
         .shot img {
             border-radius: 18px;
             width: min(100%, 196px);
+            height: auto;
+            max-height: 100%;
+            object-fit: contain;
             margin: 0 auto;
             box-shadow: 0 22px 44px rgba(0, 0, 0, 0.34);
         }
@@ -787,7 +791,7 @@
             }
 
             .shot-media {
-                min-height: 360px;
+                height: 430px;
             }
 
             .shot img {
@@ -908,7 +912,7 @@
             <div class="shot-grid">
                 <article class="shot">
                     <div class="shot-media">
-	                        <img src="./assets/screenshots/iphone-6_9/02_add_source.png" alt="Aura TV source import screen" width="420" height="912" loading="lazy">
+	                        <img src="./assets/raw-02.png" alt="Aura TV source import screen" width="1320" height="2868" loading="lazy">
                     </div>
                     <div class="shot-label">Import</div>
                     <div class="shot-title">Bring in your own source</div>
@@ -916,7 +920,7 @@
                 </article>
                 <article class="shot">
                     <div class="shot-media">
-	                        <img src="./assets/screenshots/iphone-6_9/03_live.png" alt="Aura TV live guide screen" width="420" height="912" loading="lazy">
+	                        <img src="./assets/raw-03.png" alt="Aura TV live guide screen" width="1320" height="2868" loading="lazy">
                     </div>
                     <div class="shot-label">Live TV</div>
                     <div class="shot-title">Browse live channels with guide context</div>
@@ -924,7 +928,7 @@
                 </article>
                 <article class="shot">
                     <div class="shot-media">
-	                        <img src="./assets/screenshots/iphone-6_9/06_settings.png" alt="Aura TV settings screen" width="420" height="912" loading="lazy">
+	                        <img src="./assets/raw-06.png" alt="Aura TV settings screen" width="1320" height="2868" loading="lazy">
                     </div>
                     <div class="shot-label">Settings</div>
                     <div class="shot-title">Control sync and playback</div>
