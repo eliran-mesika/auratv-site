@@ -12,6 +12,7 @@ Static GitHub Pages site for the public Aura TV App Store URLs.
 - Blog feed: `https://auratv.mesikalabs.com/blog/feed.json`
 - Robots: `https://auratv.mesikalabs.com/robots.txt`
 - Sitemap: `https://auratv.mesikalabs.com/sitemap.xml`
+- LLM summary: `https://auratv.mesikalabs.com/llms.txt`
 
 ## App Store Connect
 

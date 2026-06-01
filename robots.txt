@@ -2,3 +2,5 @@ User-agent: *
 Allow: /
 
 Sitemap: https://auratv.mesikalabs.com/sitemap.xml
+
+# LLM-friendly product summary: https://auratv.mesikalabs.com/llms.txt
