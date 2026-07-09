@@ -2,10 +2,10 @@
 
 ## Product Focus
 
-- This repo is the static public site for Aura TV App Store URLs.
+- This repo is the static public site for Aura TV app store URLs.
 - Follow `DESIGN.md` for visual rules, navigation structure, icon usage, and player-only screenshot constraints.
 - Keep the site aligned with the player-only Aura TV positioning.
-- Aura TV does not provide channels, playlists, broadcaster accounts, catalogs, or content access.
+- Aura TV does not provide channels, playlists, credentials, broadcaster accounts, catalogs, or content access.
 - Do not add money-gated product copy unless the active App Store release plan explicitly reintroduces that positioning.
 
 ## Contact Points
@@ -16,13 +16,14 @@
 - App-specific support: `auratv@mesikalabs.com`
 
 Use `auratv@mesikalabs.com` for Aura TV support surfaces and the policy-specific MesikaLabs addresses for privacy and legal pages.
+Public policy copy must cover Apple App Store / StoreKit and Google Play Billing, secure local on-device storage, user-provided network URLs, and the fact that some user-provided sources may use HTTP.
 
 ## Brand Asset Contract
 
 - `assets/app-icon.png` must mirror the approved iOS 1024 icon from `/Users/eliranmesika/Repos/Iptv/Aura-TV-Smart-IPTV-Player/IPTVPlayer/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon-1024.png`.
 - Favicon, Apple touch icon, manifest icons, and Open Graph image assets should be regenerated from that same approved icon source.
 - `assets/og-image.png` is the 1200 x 630 social share export produced by `/Users/eliranmesika/Repos/Iptv/Aura-TV-Smart-IPTV-Player/scripts/generate_social_asset_pack.py`.
-- Keep homepage, support, privacy, terms, metadata, and manifest copy consistent with the player-only App Store packet.
+- Keep homepage, support, privacy, terms, metadata, and manifest copy consistent with the player-only Apple App Store and Google Play packet.
 
 ## Social Link Guardrail
 

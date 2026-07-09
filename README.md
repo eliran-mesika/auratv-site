@@ -1,6 +1,6 @@
 # Aura TV Site
 
-Static GitHub Pages site for the public Aura TV App Store URLs.
+Static GitHub Pages site for the public Aura TV app store URLs.
 
 ## Intended URLs
 
@@ -14,13 +14,13 @@ Static GitHub Pages site for the public Aura TV App Store URLs.
 - Sitemap: `https://auratv.mesikalabs.com/sitemap.xml`
 - LLM summary: `https://auratv.mesikalabs.com/llms.txt`
 
-## App Store Connect
+## Store Review Surfaces
 
 - Apple ID: `6762010608`
 - Publisher: `Eliran Mesika`
 - Public support contact: `auratv@mesikalabs.com`
-- First-release model: player-only submission focused on user-provided sources
-- The support, privacy, and terms pages should keep the same player-only language and public contact identity used in App Store Connect.
+- Release model: player-only submission focused on user-provided sources
+- The support, privacy, and terms pages should keep the same player-only language and public contact identity used in Apple App Store and Google Play review surfaces.
 
 ## Brand Assets
 

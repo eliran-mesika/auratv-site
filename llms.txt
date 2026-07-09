@@ -1,6 +1,6 @@
 # Aura TV
 
-> Aura TV is an iPhone and iPad IPTV player for user-provided M3U playlists, Xtream-compatible credentials, and EPG/XMLTV guide data.
+> Aura TV is an IPTV player for Apple and Android devices, including iPhone, iPad, Apple TV, Android phone/tablet, Android TV, and Google TV, for user-provided M3U playlists, Xtream-compatible credentials, and EPG/XMLTV guide data.
 
 ## Key Pages
 
@@ -13,9 +13,9 @@
 
 ## Product Positioning
 
-- Primary category: IPTV player for iOS.
-- Core search intents: IPTV player iPhone, M3U player iOS, Xtream IPTV player, EPG/XMLTV guide player, bring your own playlist IPTV app.
-- Aura TV is player-only. It does not provide channels, playlists, broadcaster accounts, sports packages, movies, series, catalogs, or content access.
+- Primary category: IPTV player for Apple and Android devices.
+- Core search intents: IPTV player, M3U player, Xtream IPTV player, EPG/XMLTV guide player, Android TV IPTV player, Google TV IPTV player, bring your own playlist IPTV app.
+- Aura TV is player-only. It does not provide channels, playlists, credentials, broadcaster accounts, sports packages, movies, series, catalogs, or content access.
 - Users are responsible for the sources and media they add.
 
 ## Support
@@ -23,4 +23,3 @@
 - App support: auratv@mesikalabs.com
 - Privacy: privacy@mesikalabs.com
 - Legal: legal@mesikalabs.com
-
