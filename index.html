@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aura TV IPTV Player for iPhone — M3U, Xtream &amp; EPG</title>
+    <title>Aura TV IPTV Player for Apple, Android TV &amp; Google TV</title>
     <meta
         name="description"
-        content="Aura TV is an IPTV player for iPhone and iPad that opens your own M3U playlists, Xtream-compatible credentials, and EPG/XMLTV guide data. No channels included."
+        content="Aura TV is an IPTV player for Apple and Android devices that opens your own M3U playlists, Xtream-compatible credentials, and EPG/XMLTV guide data. No channels included."
     >
-    <meta property="og:title" content="Aura TV IPTV Player for iPhone — M3U, Xtream &amp; EPG">
+    <meta property="og:title" content="Aura TV IPTV Player for Apple, Android TV &amp; Google TV">
     <meta
         property="og:description"
         content="Import your own M3U playlists, Xtream-compatible credentials, and EPG/XMLTV guide data. Aura TV is a player and does not include channels."
@@ -31,9 +31,9 @@
         "@type": "SoftwareApplication",
         "name": "Aura TV",
         "url": "https://auratv.mesikalabs.com/",
-        "operatingSystem": "iOS",
+        "operatingSystem": "iOS, iPadOS, tvOS, Android, Android TV, Google TV",
         "applicationCategory": "EntertainmentApplication",
-        "description": "Aura TV is an IPTV player for iPhone and iPad that opens user-provided M3U playlists, Xtream-compatible credentials, and EPG/XMLTV guide data.",
+        "description": "Aura TV is an IPTV player for Apple and Android devices that opens user-provided M3U playlists, Xtream-compatible credentials, and EPG/XMLTV guide data.",
         "featureList": [
             "M3U playlist import",
             "Xtream-compatible login",
@@ -810,6 +810,15 @@
                 width: 146px;
                 height: 318px;
                 border-radius: 22px;
+                transform: none;
+            }
+
+            .hero-phone-import {
+                left: 0;
+            }
+
+            .hero-phone-library {
+                right: 0;
             }
 
             .shot-media {
@@ -851,8 +860,8 @@
                     </div>
                     <h1>IPTV player for your own M3U playlists.</h1>
                     <p class="hero-lead">
-                        Aura TV helps organize the M3U playlists, Xtream-compatible credentials, and EPG/XMLTV guide data you already use on iPhone and iPad.
-                        Import your source, browse live TV, movies, and series, and keep the player focused on your setup.
+                        Aura TV helps organize the M3U playlists, Xtream-compatible credentials, and EPG/XMLTV guide data you already use on iPhone, iPad,
+                        Apple TV, Android phone/tablet, Android TV, and Google TV. Import your source and keep the player focused on your setup.
                     </p>
                     <p class="hero-note">
                         Aura TV does not include channels, playlists, media catalogs, broadcaster accounts, sports packages, movies, or content access.
@@ -866,7 +875,7 @@
                         <div class="badge">M3U playlists</div>
                         <div class="badge">Xtream-compatible login</div>
                         <div class="badge">EPG / XMLTV</div>
-                        <div class="badge">Optional iCloud sync</div>
+                        <div class="badge">Apple + Android devices</div>
                     </div>
                 </div>
 
@@ -894,7 +903,7 @@
                     <h2>M3U, Xtream, and EPG player tools</h2>
                 </div>
                     <p>
-                        Premium focuses on organization, playback, support, and cross-device continuity for sources you already control.
+                        Aura TV focuses on organization, playback, support, and platform commerce restore paths for sources you already control.
                     It is designed as a player, not as a broadcaster or catalog service.
                 </p>
             </div>
@@ -912,12 +921,12 @@
                 <article class="card">
                     <div class="card-icon">03</div>
                     <h3>Keep everything consistent</h3>
-                    <p>Favorites, watch history, and preferences can sync through iCloud so your setup feels continuous across your Apple devices.</p>
+                    <p>Favorites, watch history, and preferences are stored on device, with platform sync where the shipping platform supports it.</p>
                 </article>
 	                <article class="card">
 	                    <div class="card-icon">04</div>
 	                    <h3>Support and billing stay reachable</h3>
-	                    <p>Settings keeps report-a-problem, request-support, restore, terms, and privacy paths available even when Premium is inactive.</p>
+	                    <p>Settings keeps report-a-problem, request-support, restore, terms, and privacy paths available across supported platforms.</p>
 	                </article>
             </div>
         </section>
@@ -954,7 +963,7 @@
                     </div>
                     <div class="shot-label">Settings</div>
                     <div class="shot-title">Control sync and playback</div>
-                    <div class="shot-copy">Manage playlists, language, support and privacy links, and device preferences in one place.</div>
+                    <div class="shot-copy">Manage playlists, language, support and privacy links, purchase restore, and device preferences in one place.</div>
                 </article>
             </div>
         </section>
@@ -982,8 +991,8 @@
 	                    <p>No. Aura TV opens sources the user adds. It does not sell, unlock, or bundle channels, playlists, catalogs, sports, movies, or broadcaster accounts.</p>
 	                </article>
                 <article class="faq-card">
-                    <h3>What data syncs through iCloud?</h3>
-                    <p>Playlist metadata, preferences, favorites, and watch history may sync through iCloud / CloudKit. Xtream-compatible passwords remain in the device keychain and are not synced via iCloud Keychain.</p>
+                    <h3>How are setup details stored?</h3>
+                    <p>Sensitive setup details use secure local on-device storage where the platform provides it. Other library data is stored locally and may use platform sync where available.</p>
                 </article>
             </div>
         </section>
@@ -995,7 +1004,7 @@
                         <h2>Setup notes without the suspicious promises</h2>
                     </div>
                     <p>
-                        Blog and support pages explain the boring-but-important bits: playlists, credentials, guide data, billing, restore, and the fact that a player is not a channel provider.
+                        Blog and support pages explain the important bits: playlists, credentials, guide data, platform billing, restore, and the fact that a player is not a channel provider.
                     </p>
                 </div>
                 <div class="resource-list">
@@ -1012,7 +1021,7 @@
                     <a class="resource-card" href="./support/">
                         <span>Support</span>
                         <strong>Import, playback, sync, and restore</strong>
-                        <p>Support guidance for source imports, EPG, playback, iCloud continuity, and Apple-managed billing.</p>
+                        <p>Support guidance for source imports, EPG, playback, platform storage, and Apple or Google-managed billing.</p>
                     </a>
                 </div>
             </div>
@@ -1023,7 +1032,7 @@
                 <div>
                     <h2>Policies and support</h2>
                 </div>
-                <p>Use the links below for support, privacy, and terms. These are the same public URLs intended for App Store Connect.</p>
+                <p>Use the links below for support, privacy, and terms. These are the public URLs intended for app store review surfaces.</p>
             </div>
             <div class="policy-grid">
                 <article class="policy-card">
@@ -1033,7 +1042,7 @@
                 </article>
                 <article class="policy-card">
                     <h3>Privacy and terms</h3>
-                    <p>Read how Aura TV handles playlist data, iCloud sync, and user responsibility.</p>
+                    <p>Read how Aura TV handles playlist data, platform storage, network requests, billing, and user responsibility.</p>
                     <p><a href="./privacy/">Privacy Policy</a> · <a href="./terms/">Terms of Use</a></p>
                 </article>
             </div>
