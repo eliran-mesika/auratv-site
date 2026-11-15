@@ -213,3 +213,16 @@ ul {
         grid-template-columns: 1fr;
     }
 }
+
+.support-button {
+    display: inline-block;
+    padding: 12px 18px;
+    border-radius: 8px;
+    background: #1464d2;
+    color: #fff;
+    font-weight: 650;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+}
+.support-button:hover { background: #104fa8; color: #fff; }
+.support-button:active { background: #0c3b7e; }
