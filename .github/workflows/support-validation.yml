@@ -1,0 +1,13 @@
+name: Support validation
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  support-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate support handoff and local links
+        run: python3 scripts/check_support.py
